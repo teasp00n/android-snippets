@@ -1,0 +1,108 @@
+snippet tag "android tag generation for logger" b
+${1:}static final String TAG = "$2";$0
+endsnippet
+
+snippet onc "android onCreate" b
+@Override
+public void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	$0
+}
+endsnippet
+
+snippet oncv "android onCreateView" b
+@Override
+public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		Bundle savedInstanceState) {
+	View rootView = inflater.inflate(R.layout.$1, container, ${2:false});
+	$0
+	return rootView;
+}
+endsnippet
+
+snippet onac "android onActivityCreated" b
+@Override
+public void onActivityCreated(Bundle savedInstanceState) {
+	super.onActivityCreated(savedInstanceState);
+	$0
+}
+endsnippet
+
+snippet ons "android onStart" b
+@Override
+public void onStart() {
+	super.onStart();
+	$0
+}
+endsnippet
+
+snippet onr "android onResume" b
+@Override
+public void onResume() {
+	super.onResume();
+	$0
+}
+endsnippet
+
+snippet onp "android onPause" b
+@Override
+public void onPause() {
+	$0
+	super.onPause();
+}
+endsnippet
+
+snippet ont "android onStop" b
+@Override
+public void onStop() {
+	$0
+	super.onStop();
+}
+endsnippet
+
+snippet ond "android onDestroy" b
+@Override
+public void onDestroy() {
+	$0
+	super.onDestroy();
+}
+endsnippet
+
+snippet logd "adb debug logging" b
+Log.d(${1:TAG}, "$2");$0
+endsnippet
+
+snippet loge "adb error logging" b
+Log.d(${1:TAG}, "$2", ${$3:ex});$0
+endsnippet
+
+snippet logw "adb warning logging" b
+Log.w(${1:TAG}, "$2");$0
+endsnippet
+
+snippet logi "adb info logging" b
+Log.i(${1:TAG}, "$2");$0
+endsnippet
+
+snippet obs "observer pattern" b
+public List<$1Listener> ${1/\w+\s*/\l$0/g}Listeners = new ArrayList<$1Listener>();
+public interface $1Listener {
+	public void on$1($2);
+}
+public void add$1Listener($1Listener l) {
+	${1/\w+\s*/\l$0/g}Listeners.add(l);
+}
+public void remove$1Listener($1Listener l) {
+	${1/\w+\s*/\l$0/g}Listeners.remove(l);
+}
+public void notify$1Listeners($2) {
+	for ($1Listener l : ${1/\w+\s*/\l$0/g}Listeners) {
+		l.on$1(${2/\w+\s*//});
+	}
+}$0
+endsnippet
+
+snippet todo "TODO" b
+//TODO: $0
+endsnippet
+

@@ -1,0 +1,74 @@
+snippet android "android xml namespace" b
+xmlns:android="http://schemas.android.com/apk/res/android"$0
+endsnippet
+
+snippet tools "tools xml namespace" b
+xmlns:tools="http://schemas.android.com/tools"$0
+endsnippet
+
+snippet app "tools xml namespace" b
+xmlns:app="http://schemas.android.com/apk/res-auto"$0
+endsnippet
+
+snippet width "android width parameter" b
+android:layout_width="$1"$0
+endsnippet
+
+snippet height "android height parameter" b
+android:layout_height="$1"$0
+endsnippet
+
+snippet weight "android weight parameter" b
+android:layout_weight="$1"$0
+endsnippet
+
+snippet view "android view" b
+<$1View
+	android:id="@+id/$2"
+	android:layout_height="${3:wrap_content}"
+	android:layout_width="${4:wrap_content}" $5/>$0
+endsnippet
+
+snippet res "android xml resource" b
+<${1} name="$2">$3</$1>$0
+endsnippet
+
+snippet linear "android linear layout" b
+<LinearLayout
+	android:id="@+id/$1"
+	android:layout_height="${2:match_parent}"
+	android:layout_width="${3:match_parent}"
+	android:orientation="${4:vertical}" >
+	$0
+</LinearLayout>
+endsnippet
+
+snippet relative "android relative layout" b
+<RelativeLayout
+	android:id="@+id/$1"
+	android:layout_height="${2:match_parent}"
+	android:layout_width="${3:match_parent}"
+	android:orientation="${4:vertical}" >
+	$0
+</RelativeLayout>
+endsnippet
+
+snippet frame "android frame layout" b
+<FrameLayout
+	android:id="@+id/$1"
+	android:layout_height="${2:match_parent}"
+	android:layout_width="${3:match_parent}"
+	android:orientation="${4:vertical}" >
+	$0
+</FrameLayout>
+endsnippet
+
+snippet constraint "android constraint layout" b
+<ConstraintLayout
+	android:id="@+id/$1"
+	android:layout_height="${2:match_parent}"
+	android:layout_width="${3:match_parent}"
+	android:orientation="${4:vertical}" >
+	$0
+</ConstraintLayout>
+endsnippet
