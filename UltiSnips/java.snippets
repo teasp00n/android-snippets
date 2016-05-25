@@ -85,7 +85,7 @@ Log.i(${1:TAG}, "$2");$0
 endsnippet
 
 snippet obs "observer pattern" b
-public List<$1Listener> ${1/\w+\s*/\l$0/g}Listeners = new ArrayList<$1Listener>();
+public List<$1Listener> ${1/\w+\s*/\l$0/g}Listeners = new LinkedList<$1Listener>();
 public interface $1Listener {
 	public void on$1($2);
 }
