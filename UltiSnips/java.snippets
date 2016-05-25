@@ -89,15 +89,17 @@ public List<$1Listener> ${1/\w+\s*/\l$0/g}Listeners = new LinkedList<$1Listener>
 public interface $1Listener {
 	public void on$1($2);
 }
-public void add$1Listener($1Listener l) {
+public void add$1Listener(final $1Listener l) {
 	${1/\w+\s*/\l$0/g}Listeners.add(l);
 }
-public void remove$1Listener($1Listener l) {
+public void remove$1Listener(final $1Listener l) {
 	${1/\w+\s*/\l$0/g}Listeners.remove(l);
 }
-public void notify$1Listeners($2) {
-	for ($1Listener l : ${1/\w+\s*/\l$0/g}Listeners) {
-		l.on$1(${2/\w+\s*//});
+public void notify$1Listeners(final $2) {
+	synchronized(${2/\w+\s*//}) {
+		for ($1Listener l : ${1/\w+\s*/\l$0/g}Listeners) {
+			l.on$1(${2/\w+\s*//});
+		}
 	}
 }$0
 endsnippet
